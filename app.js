@@ -10,12 +10,12 @@ function addTask() {
   }
 }
 
-function clearTasks() {
+/*function clearTasks() {
   const ul = document.getElementById('taskList');
   ul.innerHTML = '';
-}
+}*/
 
-// ✅ Only ONE module.exports:
+
 module.exports = {
   addTaskToList: function(task, taskList) {
     if (task.trim()) {
@@ -24,8 +24,8 @@ module.exports = {
     }
     return false;
   },
-  clearTasksFromList: function(taskList) {
+  /*clearTasksFromList: function(taskList) {
     taskList.length = 0;
     return true;
-  }
+  }*/
 };
