@@ -10,15 +10,17 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Running on Ubuntu
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3  # Checkout the code from the repo
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '18'  # Use Node.js v18 or above
       - name: Install dependencies
         run: npm install
+      - name: Set permissions for Jest
+        run: chmod -R 755 node_modules/.bin  # Give execute permission for Jest binary
       - name: Run tests
-        run: npx jest
+        run: npx jest  # Run tests using Jest with npx
